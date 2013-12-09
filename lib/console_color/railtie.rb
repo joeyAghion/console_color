@@ -9,10 +9,10 @@ module ConsoleColor
           setup_without_custom_prompt(ap_path)
           prompt = "#{ConsoleColor::COLORS[Rails.env]}#{Rails.application.class.parent_name.downcase}:#{Rails.env}"
           IRB.conf[:PROMPT][:RAILS_APP] = {
-            PROMPT_I: "\001#{prompt}> \e[0m\002",
-            PROMPT_N: "\001#{prompt}> \e[0m\002",
-            PROMPT_S: "\001#{prompt}%l \e[0m\002",
-            PROMPT_C: "\001#{prompt}* \e[0m\002",
+            PROMPT_I: "\001#{prompt}>\e[0m\002 ",
+            PROMPT_N: "\001#{prompt}>\e[0m\002 ",
+            PROMPT_S: "\001#{prompt}%l\e[0m\002 ",
+            PROMPT_C: "\001#{prompt}*\e[0m\002 ",
             RETURN: "=> %s\n"
           }
           IRB.conf[:PROMPT_MODE] = :RAILS_APP
