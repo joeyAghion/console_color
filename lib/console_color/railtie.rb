@@ -13,7 +13,8 @@ module ConsoleColor
             PROMPT_N: "\001#{prompt}>\e[0m\002 ",
             PROMPT_S: "\001#{prompt}%l\e[0m\002 ",
             PROMPT_C: "\001#{prompt}*\e[0m\002 ",
-            RETURN: "=> %s\n"
+            RETURN: "=> %s\n",
+            AUTO_INDENT: true
           }
           IRB.conf[:PROMPT_MODE] = :RAILS_APP
         end
