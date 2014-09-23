@@ -7,12 +7,12 @@ module ConsoleColor
 
         def setup_with_custom_prompt(ap_path)
           setup_without_custom_prompt(ap_path)
-          prompt = "#{ConsoleColor::COLORS[Rails.env]}#{Rails.application.class.parent_name.downcase}:#{Rails.env}"
+          prompt = "\001#{ConsoleColor::COLORS[Rails.env]}\002#{Rails.application.class.parent_name.downcase}:#{Rails.env}"
           IRB.conf[:PROMPT][:RAILS_APP] = {
-            PROMPT_I: "\001#{prompt}>\e[0m\002 ",
-            PROMPT_N: "\001#{prompt}>\e[0m\002 ",
-            PROMPT_S: "\001#{prompt}%l\e[0m\002 ",
-            PROMPT_C: "\001#{prompt}*\e[0m\002 ",
+            PROMPT_I: "#{prompt}>\e[0m ",
+            PROMPT_N: "#{prompt}>\e[0m ",
+            PROMPT_S: "#{prompt}%l\e[0m ",
+            PROMPT_C: "#{prompt}*\e[0m ",
             RETURN: "=> %s\n",
             AUTO_INDENT: true
           }
