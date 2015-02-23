@@ -37,6 +37,6 @@ Or install it yourself as:
 5. Create new Pull Request
 
 
-&copy; Joey Aghion, Artsy
+&copy; Joey Aghion
 
 [LICENSE](LICENSE.txt)

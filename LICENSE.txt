@@ -1,4 +1,4 @@
-Copyright (c) 2013 Joey Aghion, Artsy
+Copyright (c) 2013 Joey Aghion
 
 MIT License
 
