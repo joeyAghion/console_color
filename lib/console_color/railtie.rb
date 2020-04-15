@@ -5,7 +5,7 @@ module ConsoleColor
         super
 
         app_name = Rails.application.class.parent_name.downcase
-        environment = Rails.env
+        environment = ENV.fetch('CONSOLE_COLOR_ENV', Rails.env)
         color = ConsoleColor::COLORS[environment]
 
         prompt = "\001#{color}\002#{app_name}:#{environment}"
