@@ -12,6 +12,18 @@ By default, the prompt is green in development, red in production, and yellow el
 
     ConsoleColor::COLORS['production'] = "\e[35m"  # pink
 
+Note that one can set the `CONSOLE_COLOR_ENV` var to override the Rails
+environment:
+
+```
+$ CONSOLE_COLOR_ENV=staging RAILS_ENV=production rails console
+app_name:staging>Rails.env
+=> "production"
+```
+
+This way you can set your staging Rails env to production to mimic that
+configuration but have your prompt reflect that you're using on the staging
+server.
 
 ## Installation
 
