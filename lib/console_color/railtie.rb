@@ -4,11 +4,15 @@ module ConsoleColor
       def setup(*)
         super
 
-        app_name = Rails.application.class.parent_name.downcase
+        app_name = if Rails.application.class.respond_to?(:module_parent_name)
+          Rails.application.class.module_parent_name
+        else
+          Rails.application.class.parent_name
+        end
         environment = ENV.fetch('CONSOLE_COLOR_ENV', Rails.env)
         color = ConsoleColor::COLORS[environment]
 
-        prompt = "\001#{color}\002#{app_name}:#{environment}"
+        prompt = "\001#{color}\002#{app_name.downcase}:#{environment}"
 
         IRB.conf[:PROMPT][:RAILS_APP] = {
           PROMPT_I: "#{prompt}>\e[0m ",
