@@ -28,7 +28,7 @@ module ConsoleColor
     end
 
     config.after_initialize do
-      class << IRB
+      class << ::IRB
         prepend IRBSetup
       end
     end
