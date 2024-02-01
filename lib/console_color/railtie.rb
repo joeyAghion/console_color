@@ -1,3 +1,5 @@
+require 'irb'
+
 module ConsoleColor
   class Railtie < Rails::Railtie
     module IRBSetup
