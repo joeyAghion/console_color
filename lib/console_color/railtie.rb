@@ -1,3 +1,5 @@
+require 'irb'
+
 module ConsoleColor
   class Railtie < Rails::Railtie
     module IRBSetup
@@ -28,7 +30,7 @@ module ConsoleColor
     end
 
     config.after_initialize do
-      class << IRB
+      class << ::IRB
         prepend IRBSetup
       end
     end
